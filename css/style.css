@@ -328,21 +328,51 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  width: 5.7em;
-  height: 5.7em;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: var(--bg-color);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
-  position: relative;
+  position: sticky;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+  float: right;
+}
+@media (max-width: 767.98px) {
+  .btn-cart {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 575.98px) {
+  .btn-cart {
+    width: 40px;
+    height: 40px;
+  }
 }
 .btn-cart svg {
   position: relative;
   z-index: 1;
   color: var(--main-color);
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 767.98px) {
+  .btn-cart svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 575.98px) {
+  .btn-cart svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 .btn-cart-count {
   position: absolute;
-  top: -5px;
+  top: -3px;
   right: 0px;
   z-index: 2;
   background-color: #ED3030;
@@ -358,6 +388,16 @@ button {
   align-items: center;
   flex-wrap: nowrap;
   font-family: var(--title-font);
+}
+@media (max-width: 767.98px) {
+  .btn-cart-count {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 575.98px) {
+  .btn-cart-count {
+    font-size: 0.7em;
+  }
 }
 .btn:disabled, .btn-fill:disabled, .btn-border:disabled, .btn-black:disabled, .btn.disabled, .disabled.btn-fill, .disabled.btn-border, .disabled.btn-black {
   pointer-events: none;
@@ -695,6 +735,39 @@ section {
   --bs-breadcrumb-item-active-color: var(--main-color);
   color: var(--bs-breadcrumb-divider-color);
   margin: 1.25em 0em;
+}
+
+.nav-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: none;
+}
+.nav-tabs .nav-link {
+  text-transform: uppercase;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1em 1.75em;
+  background-color: #F0F0F0;
+  border: none;
+  color: #7D7D7D;
+  transition: var(--transition);
+  transition-property: color, background-color;
+}
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  color: var(--font-color);
+  border: none;
+}
+.nav-tabs .nav-link:active, .nav-tabs .nav-link.active {
+  border: none;
+  color: var(--bg-color);
+  background-color: var(--font-color);
 }
 
 body {

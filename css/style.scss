@@ -351,20 +351,42 @@ button {
     }
     &-cart {
         @include flex();
-        width: 5.7em;
-        height: 5.7em;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         background-color: var(--bg-color);
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
-        position: relative;
+        position: sticky;
+        top: 0px;
+        right: 0px;
+        z-index: 10;
+        float: right;
+        @media (max-width:767.98px) {
+            width: 60px;
+            height: 60px;
+        }
+        @media (max-width:575.98px) {
+            width: 40px;
+            height: 40px;
+        }
         svg {
             position: relative;
             z-index: 1;
             color: var(--main-color);
+            width: 40px;
+            height: 40px;
+            @media (max-width:767.98px) {
+                width: 30px;
+                height: 30px;
+            }
+            @media (max-width:575.98px) {
+                width: 20px;
+                height: 20px;
+            }
         }
         &-count {
             position: absolute;
-            top: -5px;
+            top: -3px;
             right: 0px;
             z-index: 2;
             background-color: #ED3030;
@@ -376,6 +398,12 @@ button {
             border-radius: 50%;
             @include flex();
             font-family: var(--title-font);
+            @media (max-width:767.98px) {
+                font-size: .9em;
+            }
+            @media (max-width:575.98px) {
+                font-size: 0.7em;
+            }
         }
     }
     &:disabled, &.disabled {
@@ -675,6 +703,33 @@ section {
     --bs-breadcrumb-item-active-color: var(--main-color);
     color: var(--bs-breadcrumb-divider-color);
     margin: 1.25em 0em;
+}
+.nav-tabs {
+    @include flex(row, flex-start, stretch, wrap);
+    gap: 10px;
+    border-bottom: none;
+    .nav-link {
+        text-transform: uppercase;
+        width: fit-content;
+        border-radius: var(--radius);
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1em 1.75em;
+        background-color: #F0F0F0;
+        border: none;
+        color: #7D7D7D;
+        transition: var(--transition);
+        transition-property: color, background-color;
+        &:hover, &:focus {
+            color: var(--font-color);
+            border: none;
+        }
+        &:active, &.active {
+            border: none;
+            color: var(--bg-color);
+            background-color: var(--font-color);
+        }
+    }
 }
 
 body {
